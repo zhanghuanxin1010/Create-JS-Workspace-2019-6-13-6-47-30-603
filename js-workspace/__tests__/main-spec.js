@@ -1,30 +1,44 @@
-const add = require('../main');
+const{isValid,genertMultiApply,multplay}= require('../main');
 
-it ('should divide two numbers', () => {
+it ('should number is valid', () => {
 
     //given
-    const firstNumber=2;
-    const secondNumber=4;
+    const first=2;
+    const second=3;
 
     //when
-    const result=divide(firstNumber.secondNumber);
-     String divide(first,second)
-    {
-     if(first>second||first>1000||second>1000||first<1||second<1)
-     {
-         return null;
-     }
+   var result=isValid(first,second);
+    
 
+   expect(result).toBe(true);
+});
+it ('should number is valid', () => {
 
-     for(var i=first;i<=second;i++)
-     {
-        for(var j=first;j<=second;j++)
-        {
-            i*j
-        }
-     }
-    }
+    //given
+    const first=2;
+    const second=3;
 
+    //when
+   var genert=genertMultiApply(first,second);
+    
+//then
+//    expect(genert[0][0]'2*2=4');
+//    expect(genert[1][0],'2*3=6');
+//    expect(genert[1][1],'3*3=9');
+   expect(genert[0][0]).toBe('2*2=4');
+    expect(genert[1][0]).toBe('2*3=6');
+    expect(genert[1][1]).toBe('3*3=9');
+});
+it ('should print', () => {
 
-    expect(result).toBe(2);
+    //given
+    const first=2;
+    const second=3;
+    var print=""
+
+    //when
+   print=multplay(first,second);
+    
+
+   expect(print).toBe("2*2=4 \n2*3=6 3*3=9 \n");
 });
